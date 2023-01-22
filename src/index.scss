@@ -6,6 +6,13 @@
 @layer base{
     body{
         font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+        @apply text-slate-700;
+    }
+    input{
+        @apply focus:ring-0 focus:border-inherit focus:outline-none;
+    }
+    button{
+        @apply focus:ring-0 focus:border-0 focus:outline-none;
     }
 }
 
