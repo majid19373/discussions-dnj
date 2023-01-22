@@ -1,7 +1,14 @@
 import { ChangeEventHandler } from "react"
-import { IComment, IUser } from "./commentsType"
+import { IComment, IDiscussion, IUser } from "./commentsType"
 
-export interface SendMessagePropsType {
+export interface handleSendCommentPropsType {
+    handleSendComment: Function
+}
+export interface CommentsPropsType extends handleSendCommentPropsType, IDiscussion {
+    handleLike: Function
+}
+
+export interface SendMessagePropsType extends handleSendCommentPropsType {
     placeholder: string
     valueInput: string 
     handleChange: ChangeEventHandler
@@ -18,4 +25,5 @@ export interface AvatarImagePropsType {
 export interface UserCommentCardPropsType extends IComment {
     reply: boolean
     handleReply: VoidFunction
+    handleLike: VoidFunction
 }

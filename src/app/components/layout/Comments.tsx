@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useState } from 'react'
-import { IDiscussion, IComment } from '../../../utils/types/commentsType'
+import { IComment } from '../../../utils/types/commentsType'
+import { CommentsPropsType } from '../../../utils/types/componentsType'
 import SendMessage from '../common/SendMessage'
 import UserCommentCard from './UserCommentCard'
 
-const Comments = ( props: IDiscussion ) => {
+const Comments = ( props: CommentsPropsType ) => {
     const {
         id,
         date,
@@ -11,7 +12,9 @@ const Comments = ( props: IDiscussion ) => {
         likes,
         text,
         user,
-        replies
+        replies,
+        handleSendComment,
+        handleLike
     } = props
 
     const [valueInput, setValueInput] = useState<string>('')
@@ -25,8 +28,12 @@ const Comments = ( props: IDiscussion ) => {
         setReplyShow(true)
     }
 
+    const handleClick = () => {
+        handleSendComment(valueInput,id)
+        setValueInput('')
+    }
     return (
-        <div className='w-full pt-4 px-4 border-b border-slate-300 last:border-0 relative' key={id}>
+        <div className='w-full pt-4 px-4 border-b border-slate-300 last:border-0 relative'>
             <UserCommentCard
                 id={id} 
                 user={user}
@@ -36,6 +43,7 @@ const Comments = ( props: IDiscussion ) => {
                 iLikedIt={iLikedIt}
                 reply={true}
                 handleReply={handleReply}
+                handleLike={()=>handleLike([id])}
             />
             {replyShow
                 ?
@@ -55,6 +63,7 @@ const Comments = ( props: IDiscussion ) => {
                                     reply={false}
                                     key={item.id}
                                     handleReply={()=>{}}
+                                    handleLike={()=>handleLike([id,item.id])}
                                 />
                             )
                         })}
@@ -62,6 +71,7 @@ const Comments = ( props: IDiscussion ) => {
                             placeholder='Reply'
                             valueInput={valueInput}
                             handleChange={handleChange}
+                            handleSendComment={handleClick}
                         />
                     </div>
                 :

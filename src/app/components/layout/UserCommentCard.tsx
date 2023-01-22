@@ -15,8 +15,10 @@ const UserCommentCard = ( props: UserCommentCardPropsType ) => {
         text,
         user,
         reply,
-        handleReply
+        handleReply,
+        handleLike
     } = props
+    
     return (
         <div className='flex gap-4 mb-4'>
             <Avatar 
@@ -29,7 +31,7 @@ const UserCommentCard = ( props: UserCommentCardPropsType ) => {
                 </div>
                 <p className='text-slate-400 text-xs' dangerouslySetInnerHTML={{__html: validateTextComment(text)}}></p>
                 <div className='flex items-center gap-4 mt-4'>
-                    <span className={`px-2 py-1 rounded-xl flex items-center gap-1 cursor-pointer ${iLikedIt ? 'bg-blue-500 text-white' : 'bg-slate-200'}`}>
+                    <span onClick={handleLike} className={`px-2 py-1 rounded-xl flex items-center gap-1 cursor-pointer ${iLikedIt ? 'bg-blue-500 text-white' : 'bg-slate-200'}`}>
                         <FontAwesomeIcon className={`${!iLikedIt && 'text-slate-400'}`} icon={faThumbsUp} />
                         <span className='text-xs font-semibold h-full'>{likes}</span>
                     </span>

@@ -6,7 +6,8 @@ const TextInput = ( props: PropsType ) => {
     const {
         value,
         onChange,
-        placeholder
+        placeholder,
+        onKeyUp
     } = props
     return (
         <input 
@@ -14,6 +15,7 @@ const TextInput = ( props: PropsType ) => {
             value={value}
             onChange={onChange}
             placeholder={placeholder}
+            onKeyUp={onKeyUp}
             className={`w-full p-2 text-sm border border-slate-300 focus:border-slate-300 bg-white placeholder:text-slate-300 rounded`} 
         />
     )

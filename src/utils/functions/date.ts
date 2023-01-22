@@ -1,4 +1,4 @@
-export const displayedAt = (createdAt: number) => {
+export const displayedAt = (createdAt: number): string => {
     const milliSeconds: number = new Date().getTime() - createdAt
     const seconds = milliSeconds / 1000
     if (seconds < 60) return `Just before`

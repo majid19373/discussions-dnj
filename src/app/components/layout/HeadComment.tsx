@@ -1,8 +1,15 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
+import { handleSendCommentPropsType } from '../../../utils/types/componentsType'
 import SendMessage from '../common/SendMessage'
 
-const HeadComment = () => {
+const HeadComment = ( props: handleSendCommentPropsType ) => {
+    const {handleSendComment} =props
     const [valueInput, setValueInput] = useState<string>('')
+
+    const handleClick = () => {
+        handleSendComment(valueInput)
+        setValueInput('')
+    }
 
     const handleChange = ( event: ChangeEvent<HTMLInputElement> ): void => {
         setValueInput(event.target.value)
@@ -13,6 +20,7 @@ const HeadComment = () => {
                 placeholder='Start a discussion'
                 valueInput={valueInput}
                 handleChange={handleChange}
+                handleSendComment={handleClick}
             />
         </div>
     )
