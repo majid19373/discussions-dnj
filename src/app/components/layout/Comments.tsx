@@ -24,11 +24,11 @@ const Comments = ( props: CommentsPropsType ) => {
         setValueInput(event.target.value)
     }
 
-    const handleReply = () => {
+    const handleReply = (): void => {
         setReplyShow(true)
     }
 
-    const handleClick = () => {
+    const handleClick = (): void => {
         handleSendComment(valueInput,id)
         setValueInput('')
     }

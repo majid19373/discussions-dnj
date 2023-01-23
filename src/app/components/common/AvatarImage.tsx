@@ -10,7 +10,7 @@ const AvatarImage = ( props: AvatarImagePropsType ) => {
     return (
         <div className='w-full min-w-[2.5rem] max-w-[2.5rem] basis-10 h-10 overflow-hidden rounded-full'>
             <picture>
-                <img src={src} alt={alt} className='w-full h-full object-cover' />
+                <img src={src} alt={alt} loading={'lazy'} className='w-full h-full object-cover' />
             </picture>
         </div>
     )

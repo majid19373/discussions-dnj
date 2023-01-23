@@ -14,7 +14,7 @@ const SendMessage = ( props: SendMessagePropsType ) => {
         handleSendComment
     } = props
 
-    const handleKey = (event: KeyboardEvent<HTMLInputElement>) => {
+    const handleKey = (event: KeyboardEvent<HTMLInputElement>): void => {
         if(event.key === 'Enter' && valueInput.length > 0){
             handleSendComment()
         }

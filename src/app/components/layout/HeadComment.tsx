@@ -6,7 +6,7 @@ const HeadComment = ( props: handleSendCommentPropsType ) => {
     const {handleSendComment} =props
     const [valueInput, setValueInput] = useState<string>('')
 
-    const handleClick = () => {
+    const handleClick = (): void => {
         handleSendComment(valueInput)
         setValueInput('')
     }

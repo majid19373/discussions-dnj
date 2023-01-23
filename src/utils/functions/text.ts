@@ -14,7 +14,7 @@ export const validateTextComment = (str: string): string => {
 
 export const avatarName = (avatar: string): string => {
     const splitFullName: string[] = avatar.split(" ")
-    let newFullName = ''
+    let newFullName: string = ''
     for(let i = 0; i < splitFullName.length; i++){
         newFullName += splitFullName[i].slice(0,1).toUpperCase()
         if(i >= 1){

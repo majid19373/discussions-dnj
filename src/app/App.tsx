@@ -33,7 +33,7 @@ const App = () => {
         }
     }
 
-    const handleLike = (arg: number[]) => {
+    const handleLike = (arg: number[]): void => {
         const cloneComments: IDiscussion[] = [...comments]
         const indexComment: number = comments.findIndex((item: IDiscussion) => item.id === arg[0])
         if(arg.length === 1){
@@ -60,7 +60,7 @@ const App = () => {
     }
     return (
         <div className='w-full md:container m-auto'>
-            <div className='w-full md:max-w-lg m-auto'>
+            <div className='w-full md:max-w-lg m-auto md:border-x md:border-slate-300 md:border-b'>
                 <HeadComment 
                     handleSendComment={handleSendComment}
                 />
