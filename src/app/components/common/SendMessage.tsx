@@ -14,9 +14,6 @@ const SendMessage = ( props: SendMessagePropsType ) => {
         handleSendComment
     } = props
 
-    const handleClick = () => {
-        handleSendComment()
-    }
     const handleKey = (event: KeyboardEvent<HTMLInputElement>) => {
         if(event.key === 'Enter' && valueInput.length > 0){
             handleSendComment()
@@ -33,8 +30,8 @@ const SendMessage = ( props: SendMessagePropsType ) => {
                 value={valueInput}
                 onKeyUp={handleKey}
             />
-            <button onClick={handleClick} type={'button'} className={`${!valueInput.length && 'hidden'}`}>
-                <FontAwesomeIcon icon={faPaperPlane} className={'text-base text-blue-600'} />
+            <button onClick={handleSendComment} type={'button'} className={`${!valueInput.length && 'hidden'} text-blue-600 hover:text-blue-800`}>
+                <FontAwesomeIcon icon={faPaperPlane} className={'text-base'} />
             </button>
         </div>
     )

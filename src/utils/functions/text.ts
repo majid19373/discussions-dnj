@@ -7,7 +7,7 @@ export const validateTextComment = (str: string): string => {
     const matches: IterableIterator<RegExpMatchArray> = str.matchAll(usernamePattern)
     // Placement of the username in the Anchor tag
     for (const match of matches) {
-        newString = newString.replaceAll(match[0], `<a href="#" class="inline-block text-blue-600 bg-blue-100 py-[1px] px-1 rounded">${match}</a>`)
+        newString = newString.replaceAll(match[0], `<a href="#" class="inline-block text-blue-600 bg-blue-100 hover:text-blue-800 hover:bg-blue-200 py-[1px] px-1 rounded">${match}</a>`)
     }
     return newString
 }

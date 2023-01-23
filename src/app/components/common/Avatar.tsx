@@ -8,17 +8,19 @@ const Avatar = ( props: AvatarPropsType ) => {
 
     if(user.avatar){
         return (
-            <AvatarImage 
-                src={user.avatar}
-                alt={user.name}
-            />
+            <a href='#'>
+                <AvatarImage 
+                    src={user.avatar}
+                    alt={user.name}
+                />
+            </a>
         )
     }
 
     return (
-        <div className='w-full min-w-[2.5rem] max-w-[2.5rem] min-h-[2.5rem] max-h-[2.5rem] basis-10 h-10 text-blue-600 font-bold overflow-hidden rounded-full bg-blue-200 flex items-center justify-center'>
+        <a className='w-full min-w-[2.5rem] max-w-[2.5rem] min-h-[2.5rem] max-h-[2.5rem] basis-10 h-10 text-blue-600 font-bold overflow-hidden rounded-full bg-blue-200 flex items-center justify-center'>
             {avatarName(user.name)}
-        </div>
+        </a>
     )
 }
 

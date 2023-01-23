@@ -8,10 +8,11 @@ export interface CommentsPropsType extends handleSendCommentPropsType, IDiscussi
     handleLike: Function
 }
 
-export interface SendMessagePropsType extends handleSendCommentPropsType {
+export interface SendMessagePropsType {
     placeholder: string
     valueInput: string 
     handleChange: ChangeEventHandler
+    handleSendComment: VoidFunction
 }
 
 export interface AvatarPropsType {
